@@ -13,13 +13,9 @@ class UserViewController: UIViewController {
     var presenter: UserPresenterProtocol?
     private static let reuseIdentifier = "UserViewControllerCell"
     
-    private var users: [UserModel]? {
-        didSet {
-            DispatchQueue.main.async { [weak self] in
-                self?.tableView.reloadData()
-            }
-        }
-    }
+    private let refreshControl = UIRefreshControl()
+    
+    private var users: [UserModel]?
     
     private let tableView: UITableView = {
         let table = UITableView()
@@ -30,7 +26,9 @@ class UserViewController: UIViewController {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         presenter?.viewDidLoad()
+        
         
         configureTable()
     }
@@ -46,6 +44,14 @@ class UserViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+    }
+    
+    //MARK: Selectors
+    @objc
+    private func handleRefresh() {
+        presenter?.viewDidLoad()
     }
 }
 
@@ -54,24 +60,34 @@ extension UserViewController: UserViewProtocol {
     
     func showUsers(_ users: [UserModel]) {
         self.users = users
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     func showError(with message: String) {
-        
+        print(message)
     }
     
     func showLoader() {
-        
+        DispatchQueue.main.async { [weak self] in
+            self?.refreshControl.beginRefreshing()
+        }
     }
     
     func dismissLoader() {
-        
+        DispatchQueue.main.async { [weak self] in
+            self?.refreshControl.endRefreshing()
+            self?.tableView.isHidden = self?.users == nil
+        }
     }
 }
 
 //MARK: UITableViewDelegate
 extension UserViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 //MARK: UITableViewDataSource

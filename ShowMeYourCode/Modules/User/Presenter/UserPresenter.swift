@@ -9,13 +9,14 @@ import Foundation
 
 class UserPresenter: UserPresenterProtocol {
     
-    var view: UserViewProtocol?
+    weak var view: UserViewProtocol?
     
     var interactor: UserInteractorInputProtocol?
     
     var router: UserRouterProtocol?
     
     func viewDidLoad() {
+        view?.showLoader()
         interactor?.retrieveUsers()
     }
     
@@ -24,10 +25,12 @@ class UserPresenter: UserPresenterProtocol {
 extension UserPresenter: UserInteractorOutputProtocol {
     func didRetrieveUsers(_ users: [UserModel]) {
         view?.showUsers(users)
+        view?.dismissLoader()
     }
     
     func onError() {
-        
+        view?.showError(with: "Any Error")
+        view?.dismissLoader()
     }
     
     
