@@ -36,7 +36,7 @@ protocol UserInteractorOutputProtocol: AnyObject {
 protocol UserInteractorInputProtocol: AnyObject {
     var presenter: UserInteractorOutputProtocol? { get set }
     var localDataManager: UserLocalDataManagerInputProtocol? { get set }
-    var remoteDataMAnager: UserRemoteDataManagerInputProtocol? { get set }
+    var remoteDataManager: UserRemoteDataManagerInputProtocol? { get set }
     
     func retrieveUsers()
 }

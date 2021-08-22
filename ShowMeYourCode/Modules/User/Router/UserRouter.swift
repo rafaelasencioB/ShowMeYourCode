@@ -35,7 +35,7 @@ class UserRouter: UserRouterProtocol {
             
             interactor.presenter = presenter
             interactor.localDataManager = localDataManager
-            interactor.remoteDataMAnager = remoteDataManager
+            interactor.remoteDataManager = remoteDataManager
             
             remoteDataManager.remoteRequestHandler = interactor
             

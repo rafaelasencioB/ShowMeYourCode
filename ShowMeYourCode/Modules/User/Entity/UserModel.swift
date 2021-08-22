@@ -7,6 +7,7 @@
 
 import Foundation
 
-class UserModel {
-    
+public struct UserModel: Codable {
+    let id: Int
+    let username: String
 }

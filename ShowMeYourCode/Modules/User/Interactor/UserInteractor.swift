@@ -11,10 +11,10 @@ class UserInteractor: UserInteractorInputProtocol {
     
     var presenter: UserInteractorOutputProtocol?
     var localDataManager: UserLocalDataManagerInputProtocol?
-    var remoteDataMAnager: UserRemoteDataManagerInputProtocol?
+    var remoteDataManager: UserRemoteDataManagerInputProtocol?
     
     func retrieveUsers() {
-        
+        remoteDataManager?.retrieveUsers()
     }
     
     
@@ -23,7 +23,7 @@ class UserInteractor: UserInteractorInputProtocol {
 extension UserInteractor: UserRemoteDataManagerOutputProtocol {
     
     func onUsersRecieved(_ users: [UserModel]) {
-        
+        presenter?.didRetrieveUsers(users)
     }
     
     func onErrorRecieved(_ message: String?) {

@@ -16,14 +16,14 @@ class UserPresenter: UserPresenterProtocol {
     var router: UserRouterProtocol?
     
     func viewDidLoad() {
-        
+        interactor?.retrieveUsers()
     }
     
     
 }
 extension UserPresenter: UserInteractorOutputProtocol {
     func didRetrieveUsers(_ users: [UserModel]) {
-        
+        print(users.count)
     }
     
     func onError() {
