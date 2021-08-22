@@ -26,8 +26,8 @@ extension UserInteractor: UserRemoteDataManagerOutputProtocol {
         presenter?.didRetrieveUsers(users)
     }
     
-    func onErrorRecieved(_ message: String?) {
-        
+    func onErrorRecieved(_ message: String) {
+        presenter?.onError(message)
     }
     
     

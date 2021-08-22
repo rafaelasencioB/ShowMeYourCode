@@ -30,7 +30,7 @@ protocol UserRouterProtocol: AnyObject {
 
 protocol UserInteractorOutputProtocol: AnyObject {
     func didRetrieveUsers(_ users: [UserModel])
-    func onError()
+    func onError(_ message: String)
 }
 
 protocol UserInteractorInputProtocol: AnyObject {
@@ -43,7 +43,7 @@ protocol UserInteractorInputProtocol: AnyObject {
 
 protocol UserRemoteDataManagerOutputProtocol: AnyObject {
     func onUsersRecieved(_ users: [UserModel])
-    func onErrorRecieved(_ message: String?)
+    func onErrorRecieved(_ message: String)
 }
 
 protocol UserRemoteDataManagerInputProtocol: AnyObject {

@@ -24,13 +24,13 @@ class UserPresenter: UserPresenterProtocol {
 }
 extension UserPresenter: UserInteractorOutputProtocol {
     func didRetrieveUsers(_ users: [UserModel]) {
-        view?.showUsers(users)
         view?.dismissLoader()
+        view?.showUsers(users)
     }
     
-    func onError() {
-        view?.showError(with: "Any Error")
+    func onError(_ message: String) {
         view?.dismissLoader()
+        view?.showError(with: message)
     }
     
     

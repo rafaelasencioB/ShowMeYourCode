@@ -17,6 +17,13 @@ class UserViewController: UIViewController {
     
     private var users: [UserModel]?
     
+    private let lbErrorMessage: UILabel = {
+        let label = UILabel()
+        label.isHidden = true
+        label.textAlignment = .center
+        return label
+    }()
+    
     private let tableView: UITableView = {
         let table = UITableView()
         table.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
@@ -29,16 +36,21 @@ class UserViewController: UIViewController {
         
         presenter?.viewDidLoad()
         
-        
-        configureTable()
+        configureUI()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.frame
+        lbErrorMessage.frame = view.frame
     }
     
     //MARK: Helpers
+    private func configureUI() {
+        configureTable()
+        view.addSubview(lbErrorMessage)
+    }
+    
     private func configureTable() {
         view.addSubview(tableView)
         tableView.delegate = self
@@ -66,7 +78,11 @@ extension UserViewController: UserViewProtocol {
     }
     
     func showError(with message: String) {
-        print(message)
+        self.users = nil
+        DispatchQueue.main.async { [weak self] in
+            self?.lbErrorMessage.isHidden = false
+            self?.lbErrorMessage.text = message
+        }
     }
     
     func showLoader() {
@@ -79,6 +95,7 @@ extension UserViewController: UserViewProtocol {
         DispatchQueue.main.async { [weak self] in
             self?.refreshControl.endRefreshing()
             self?.tableView.isHidden = self?.users == nil
+            self?.lbErrorMessage.isHidden = self?.users != nil
         }
     }
 }
@@ -101,6 +118,7 @@ extension UserViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: UserViewController.reuseIdentifier, for: indexPath)
         
         cell.textLabel?.text = self.users?[indexPath.row].username
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
 }
