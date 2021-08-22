@@ -23,7 +23,7 @@ class UserPresenter: UserPresenterProtocol {
 }
 extension UserPresenter: UserInteractorOutputProtocol {
     func didRetrieveUsers(_ users: [UserModel]) {
-        print(users.count)
+        view?.showUsers(users)
     }
     
     func onError() {
