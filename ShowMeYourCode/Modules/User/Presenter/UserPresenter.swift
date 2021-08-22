@@ -7,6 +7,28 @@
 
 import Foundation
 
-class UserInteractor {
+class UserPresenter: UserPresenterProtocol {
+    
+    var view: UserViewProtocol?
+    
+    var interactor: UserInteractorInputProtocol?
+    
+    var router: UserRouterProtocol?
+    
+    func viewDidLoad() {
+        
+    }
+    
+    
+}
+extension UserPresenter: UserInteractorOutputProtocol {
+    func didRetrieveUsers(_ users: [UserModel]) {
+        
+    }
+    
+    func onError() {
+        
+    }
+    
     
 }

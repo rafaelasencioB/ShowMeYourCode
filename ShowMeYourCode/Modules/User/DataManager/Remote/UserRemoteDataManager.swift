@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+class UserRemoteDataManager: UserRemoteDataManagerInputProtocol {
+    var remoteRequestHandler: UserRemoteDataManagerOutputProtocol?
+    
+    func retrieveUsers() {
+        
+    }
+    
+    
+    
+}

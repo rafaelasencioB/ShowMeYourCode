@@ -7,6 +7,28 @@
 
 import Foundation
 
-class UserInteractor {
+class UserInteractor: UserInteractorInputProtocol {
+    
+    var presenter: UserInteractorOutputProtocol?
+    var localDataManager: UserLocalDataManagerInputProtocol?
+    var remoteDataMAnager: UserRemoteDataManagerInputProtocol?
+    
+    func retrieveUsers() {
+        
+    }
+    
+    
+}
+
+extension UserInteractor: UserRemoteDataManagerOutputProtocol {
+    
+    func onUsersRecieved(_ users: [UserModel]) {
+        
+    }
+    
+    func onErrorRecieved(_ message: String?) {
+        
+    }
+    
     
 }

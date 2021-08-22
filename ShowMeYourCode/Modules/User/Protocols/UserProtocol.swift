@@ -7,16 +7,16 @@
 
 import UIKit
 
-protocol UserViewProtocol {
+protocol UserViewProtocol: AnyObject {
     var presenter: UserPresenterProtocol? { get set }
     
-    func showUsers(_ user: [UserModel])
+    func showUsers(_ users: [UserModel])
     func showError(with message: String)
     func showLoader()
     func dismissLoader()
 }
 
-protocol UserPresenterProtocol {
+protocol UserPresenterProtocol: AnyObject {
     var view: UserViewProtocol? { get set }
     var interactor: UserInteractorInputProtocol? { get set }
     var router: UserRouterProtocol? { get set }
@@ -24,38 +24,37 @@ protocol UserPresenterProtocol {
     func viewDidLoad()
 }
 
-protocol UserRouterProtocol {
-    func createUserModule() -> UIViewController
+protocol UserRouterProtocol: AnyObject {
+    static func createUserModule() -> UIViewController
 }
 
-protocol UserInteractorOutputProtocol {
+protocol UserInteractorOutputProtocol: AnyObject {
     func didRetrieveUsers(_ users: [UserModel])
     func onError()
 }
 
-protocol UserInteractorInputProtocol {
+protocol UserInteractorInputProtocol: AnyObject {
     var presenter: UserInteractorOutputProtocol? { get set }
-    var localDataManager: UserRemoteDataManagerInputProtocol? { get set }
-    var remoteDataMAnager: UserLocalDataManagerInputProtocol? { get set }
+    var localDataManager: UserLocalDataManagerInputProtocol? { get set }
+    var remoteDataMAnager: UserRemoteDataManagerInputProtocol? { get set }
     
     func retrieveUsers()
 }
 
-protocol UserRemoteDataManagerOutputProtocol {
+protocol UserRemoteDataManagerOutputProtocol: AnyObject {
     func onUsersRecieved(_ users: [UserModel])
     func onErrorRecieved(_ message: String?)
 }
 
-protocol UserRemoteDataManagerInputProtocol {
+protocol UserRemoteDataManagerInputProtocol: AnyObject {
     var remoteRequestHandler: UserRemoteDataManagerOutputProtocol? { get set }
-    func retrieveUsers(completion: @escaping (Result<[UserModel], Error>) -> Void)
+    func retrieveUsers()
 }
 
-protocol UserLocalDataManagerOutputProtocol {
+protocol UserLocalDataManagerOutputProtocol: AnyObject {
     
 }
 
-protocol UserLocalDataManagerInputProtocol {
-    var localRequestHandler: UserLocalDataManagerOutputProtocol? { get set }
-    func retrieveUsers(completion: @escaping (Result<[UserModel], Error>) -> Void)
+protocol UserLocalDataManagerInputProtocol: AnyObject {
+    func retrieveUsers() throws -> [UserModel]
 }

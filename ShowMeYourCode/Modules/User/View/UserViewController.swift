@@ -7,13 +7,31 @@
 
 import UIKit
 
-class UserViewController: UIViewController {
+class UserViewController: UIViewController, UserViewProtocol {
     
+    var presenter: UserPresenterProtocol?
+    
+    func showUsers(_ users: [UserModel]) {
+        
+    }
+    
+    func showError(with message: String) {
+        
+    }
+    
+    func showLoader() {
+        
+    }
+    
+    func dismissLoader() {
+        
+    }
+    
+    
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .link
+        presenter?.viewDidLoad()
     }
-
-
 }
 

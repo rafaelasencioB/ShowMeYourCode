@@ -21,6 +21,7 @@
 		5387405526D05DAB000FBF52 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387405426D05DAB000FBF52 /* Endpoints.swift */; };
 		5387405A26D07234000FBF52 /* UserRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387405926D07234000FBF52 /* UserRemoteDataManager.swift */; };
 		5387405C26D07243000FBF52 /* UserLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387405B26D07243000FBF52 /* UserLocalDataManager.swift */; };
+		5387406526D257D3000FBF52 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387406426D257D3000FBF52 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		5387405426D05DAB000FBF52 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		5387405926D07234000FBF52 /* UserRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRemoteDataManager.swift; sourceTree = "<group>"; };
 		5387405B26D07243000FBF52 /* UserLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalDataManager.swift; sourceTree = "<group>"; };
+		5387406426D257D3000FBF52 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +74,11 @@
 		5387402A26D00A43000FBF52 /* ShowMeYourCode */ = {
 			isa = PBXGroup;
 			children = (
-				5387405326D05D9A000FBF52 /* Common */,
 				5387404026D032D0000FBF52 /* App */,
+				5387405E26D23EFE000FBF52 /* Resources */,
+				5387405326D05D9A000FBF52 /* Common */,
 				5387404726D035A7000FBF52 /* UI */,
 				5387403F26D0324B000FBF52 /* Modules */,
-				5387403426D00A44000FBF52 /* Assets.xcassets */,
-				5387403926D00A44000FBF52 /* Info.plist */,
 			);
 			path = ShowMeYourCode;
 			sourceTree = "<group>";
@@ -93,6 +94,7 @@
 		5387404026D032D0000FBF52 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				5387403926D00A44000FBF52 /* Info.plist */,
 				5387402B26D00A43000FBF52 /* AppDelegate.swift */,
 				5387402D26D00A43000FBF52 /* SceneDelegate.swift */,
 			);
@@ -173,6 +175,8 @@
 		5387405326D05D9A000FBF52 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5387406326D24F87000FBF52 /* Constants */,
+				5387406226D24F79000FBF52 /* Utils */,
 				5387405426D05DAB000FBF52 /* Endpoints.swift */,
 			);
 			path = Common;
@@ -201,6 +205,29 @@
 				5387405926D07234000FBF52 /* UserRemoteDataManager.swift */,
 			);
 			path = Remote;
+			sourceTree = "<group>";
+		};
+		5387405E26D23EFE000FBF52 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5387403426D00A44000FBF52 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5387406226D24F79000FBF52 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5387406326D24F87000FBF52 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5387406426D257D3000FBF52 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +311,7 @@
 				5387405526D05DAB000FBF52 /* Endpoints.swift in Sources */,
 				5387405C26D07243000FBF52 /* UserLocalDataManager.swift in Sources */,
 				5387402E26D00A43000FBF52 /* SceneDelegate.swift in Sources */,
+				5387406526D257D3000FBF52 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +460,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7EJKV8CGJ8;
-				INFOPLIST_FILE = ShowMeYourCode/Info.plist;
+				INFOPLIST_FILE = ShowMeYourCode/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,7 +479,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7EJKV8CGJ8;
-				INFOPLIST_FILE = ShowMeYourCode/Info.plist;
+				INFOPLIST_FILE = ShowMeYourCode/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
