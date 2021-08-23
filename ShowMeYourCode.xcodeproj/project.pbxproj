@@ -21,6 +21,16 @@
 		5387405526D05DAB000FBF52 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387405426D05DAB000FBF52 /* Endpoints.swift */; };
 		5387405A26D07234000FBF52 /* UserRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387405926D07234000FBF52 /* UserRemoteDataManager.swift */; };
 		5387405C26D07243000FBF52 /* UserLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387405B26D07243000FBF52 /* UserLocalDataManager.swift */; };
+		5387406526D257D3000FBF52 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387406426D257D3000FBF52 /* Constants.swift */; };
+		5387406A26D26556000FBF52 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387406926D26556000FBF52 /* APIManager.swift */; };
+		5387406C26D26592000FBF52 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387406B26D26592000FBF52 /* APIClient.swift */; };
+		5387406E26D26841000FBF52 /* APIRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387406D26D26841000FBF52 /* APIRequestProtocol.swift */; };
+		5387407026D27A27000FBF52 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387406F26D27A27000FBF52 /* NetworkError.swift */; };
+		5387407926D2B527000FBF52 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387407826D2B527000FBF52 /* UserDetailViewController.swift */; };
+		5387407B26D2B55B000FBF52 /* UserDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387407A26D2B55B000FBF52 /* UserDetailProtocols.swift */; };
+		5387407D26D2B6A1000FBF52 /* UserDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387407C26D2B6A1000FBF52 /* UserDetailInteractor.swift */; };
+		5387407F26D2B6B3000FBF52 /* UserDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387407E26D2B6B3000FBF52 /* UserDetailPresenter.swift */; };
+		5387408126D2B6BD000FBF52 /* UserDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387408026D2B6BD000FBF52 /* UserDetailRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +50,16 @@
 		5387405426D05DAB000FBF52 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		5387405926D07234000FBF52 /* UserRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRemoteDataManager.swift; sourceTree = "<group>"; };
 		5387405B26D07243000FBF52 /* UserLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalDataManager.swift; sourceTree = "<group>"; };
+		5387406426D257D3000FBF52 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5387406926D26556000FBF52 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		5387406B26D26592000FBF52 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		5387406D26D26841000FBF52 /* APIRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestProtocol.swift; sourceTree = "<group>"; };
+		5387406F26D27A27000FBF52 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		5387407826D2B527000FBF52 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		5387407A26D2B55B000FBF52 /* UserDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailProtocols.swift; sourceTree = "<group>"; };
+		5387407C26D2B6A1000FBF52 /* UserDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailInteractor.swift; sourceTree = "<group>"; };
+		5387407E26D2B6B3000FBF52 /* UserDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailPresenter.swift; sourceTree = "<group>"; };
+		5387408026D2B6BD000FBF52 /* UserDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +92,11 @@
 		5387402A26D00A43000FBF52 /* ShowMeYourCode */ = {
 			isa = PBXGroup;
 			children = (
-				5387405326D05D9A000FBF52 /* Common */,
 				5387404026D032D0000FBF52 /* App */,
+				5387405E26D23EFE000FBF52 /* Resources */,
+				5387405326D05D9A000FBF52 /* Common */,
 				5387404726D035A7000FBF52 /* UI */,
 				5387403F26D0324B000FBF52 /* Modules */,
-				5387403426D00A44000FBF52 /* Assets.xcassets */,
-				5387403926D00A44000FBF52 /* Info.plist */,
 			);
 			path = ShowMeYourCode;
 			sourceTree = "<group>";
@@ -86,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				5387404126D0354B000FBF52 /* User */,
+				5387407126D2B4D1000FBF52 /* UserDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -93,6 +113,7 @@
 		5387404026D032D0000FBF52 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				5387403926D00A44000FBF52 /* Info.plist */,
 				5387402B26D00A43000FBF52 /* AppDelegate.swift */,
 				5387402D26D00A43000FBF52 /* SceneDelegate.swift */,
 			);
@@ -173,6 +194,9 @@
 		5387405326D05D9A000FBF52 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5387406626D26515000FBF52 /* Managers */,
+				5387406326D24F87000FBF52 /* Constants */,
+				5387406226D24F79000FBF52 /* Utils */,
 				5387405426D05DAB000FBF52 /* Endpoints.swift */,
 			);
 			path = Common;
@@ -201,6 +225,116 @@
 				5387405926D07234000FBF52 /* UserRemoteDataManager.swift */,
 			);
 			path = Remote;
+			sourceTree = "<group>";
+		};
+		5387405E26D23EFE000FBF52 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5387403426D00A44000FBF52 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5387406226D24F79000FBF52 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5387406326D24F87000FBF52 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5387406426D257D3000FBF52 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		5387406626D26515000FBF52 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5387406726D26529000FBF52 /* Remote */,
+				5387406826D26530000FBF52 /* Local */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		5387406726D26529000FBF52 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				5387406926D26556000FBF52 /* APIManager.swift */,
+				5387406B26D26592000FBF52 /* APIClient.swift */,
+				5387406D26D26841000FBF52 /* APIRequestProtocol.swift */,
+				5387406F26D27A27000FBF52 /* NetworkError.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		5387406826D26530000FBF52 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		5387407126D2B4D1000FBF52 /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				5387407726D2B504000FBF52 /* View */,
+				5387407626D2B500000FBF52 /* Interactor */,
+				5387407526D2B4FB000FBF52 /* Presenter */,
+				5387407426D2B4F5000FBF52 /* Entity */,
+				5387407326D2B4F0000FBF52 /* Router */,
+				5387407226D2B4E9000FBF52 /* Protocols */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
+		5387407226D2B4E9000FBF52 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5387407A26D2B55B000FBF52 /* UserDetailProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		5387407326D2B4F0000FBF52 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				5387408026D2B6BD000FBF52 /* UserDetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		5387407426D2B4F5000FBF52 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		5387407526D2B4FB000FBF52 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5387407E26D2B6B3000FBF52 /* UserDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5387407626D2B500000FBF52 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				5387407C26D2B6A1000FBF52 /* UserDetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		5387407726D2B504000FBF52 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5387407826D2B527000FBF52 /* UserDetailViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,17 +407,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5387407926D2B527000FBF52 /* UserDetailViewController.swift in Sources */,
 				5387403026D00A43000FBF52 /* UserViewController.swift in Sources */,
+				5387407026D27A27000FBF52 /* NetworkError.swift in Sources */,
+				5387407B26D2B55B000FBF52 /* UserDetailProtocols.swift in Sources */,
+				5387406E26D26841000FBF52 /* APIRequestProtocol.swift in Sources */,
+				5387406C26D26592000FBF52 /* APIClient.swift in Sources */,
 				5387404926D035EB000FBF52 /* UserInteractor.swift in Sources */,
 				5387404D26D035F9000FBF52 /* UserModel.swift in Sources */,
 				5387402C26D00A43000FBF52 /* AppDelegate.swift in Sources */,
 				5387405A26D07234000FBF52 /* UserRemoteDataManager.swift in Sources */,
+				5387407F26D2B6B3000FBF52 /* UserDetailPresenter.swift in Sources */,
 				5387404F26D03608000FBF52 /* UserRouter.swift in Sources */,
 				5387404B26D035F3000FBF52 /* UserPresenter.swift in Sources */,
+				5387408126D2B6BD000FBF52 /* UserDetailRouter.swift in Sources */,
 				5387405226D03698000FBF52 /* UserProtocol.swift in Sources */,
 				5387405526D05DAB000FBF52 /* Endpoints.swift in Sources */,
 				5387405C26D07243000FBF52 /* UserLocalDataManager.swift in Sources */,
+				5387406A26D26556000FBF52 /* APIManager.swift in Sources */,
 				5387402E26D00A43000FBF52 /* SceneDelegate.swift in Sources */,
+				5387407D26D2B6A1000FBF52 /* UserDetailInteractor.swift in Sources */,
+				5387406526D257D3000FBF52 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +576,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7EJKV8CGJ8;
-				INFOPLIST_FILE = ShowMeYourCode/Info.plist;
+				INFOPLIST_FILE = ShowMeYourCode/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,7 +595,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7EJKV8CGJ8;
-				INFOPLIST_FILE = ShowMeYourCode/Info.plist;
+				INFOPLIST_FILE = ShowMeYourCode/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

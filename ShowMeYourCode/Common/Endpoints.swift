@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Endpoints {
+    
+    static let ENDPOINT_WS_USERS = "users"
+}

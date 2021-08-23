@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+class UserLocalDataManager: UserLocalDataManagerInputProtocol {
+    
+    func retrieveUsers() throws -> [UserModel] {
+        return []
+    }
+    
+    
+}
