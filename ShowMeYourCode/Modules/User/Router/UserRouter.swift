@@ -10,7 +10,7 @@ import UIKit
 class UserRouter: UserRouterProtocol {
     
     class func createUserModule() -> UIViewController {
-        let viewController = mainStoryboard.instantiateViewController(identifier: String(describing: UserViewController.self))
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "UserViewController")
         
         if let view = viewController as? UserViewController {
             
@@ -45,6 +45,13 @@ class UserRouter: UserRouterProtocol {
     }
     
     static var mainStoryboard: UIStoryboard {
-        return UIStoryboard(name: K.Storyboards.Main, bundle: Bundle.main)
+        return UIStoryboard(name: K.Storyboards.Main, bundle: nil)
+    }
+    
+    func presentUserDetailScreen(from view: UserViewProtocol, with user: UserModel) {
+        let userDetailViewController = UserDetailRouter.createUserDetailModule(for: user)
+        if let sourceView = view as? UIViewController {
+            sourceView.navigationController?.pushViewController(userDetailViewController, animated: true)
+        }
     }
 }

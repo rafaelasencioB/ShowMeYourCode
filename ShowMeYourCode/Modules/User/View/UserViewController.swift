@@ -55,6 +55,7 @@ class UserViewController: UIViewController {
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: UserViewController.reuseIdentifier)
         tableView.tableFooterView = UIView()
         tableView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
@@ -104,6 +105,7 @@ extension UserViewController: UserViewProtocol {
 extension UserViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        presenter?.presentUserDetail(with: self.users?[indexPath.row])
     }
 }
 

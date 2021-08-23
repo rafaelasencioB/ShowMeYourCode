@@ -20,7 +20,10 @@ class UserPresenter: UserPresenterProtocol {
         interactor?.retrieveUsers()
     }
     
-    
+    func presentUserDetail(with user: UserModel?) {
+        guard let user = user, let view = self.view else { return }
+        router?.presentUserDetailScreen(from: view, with: user)
+    }
 }
 extension UserPresenter: UserInteractorOutputProtocol {
     func didRetrieveUsers(_ users: [UserModel]) {

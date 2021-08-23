@@ -22,10 +22,12 @@ protocol UserPresenterProtocol: AnyObject {
     var router: UserRouterProtocol? { get set }
     
     func viewDidLoad()
+    func presentUserDetail(with user: UserModel?)
 }
 
 protocol UserRouterProtocol: AnyObject {
     static func createUserModule() -> UIViewController
+    func presentUserDetailScreen(from view: UserViewProtocol, with user: UserModel)
 }
 
 protocol UserInteractorOutputProtocol: AnyObject {
